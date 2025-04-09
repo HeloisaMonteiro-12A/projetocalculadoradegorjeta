@@ -1,0 +1,230 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --white: #fff;
+    --mint-cream: #F1FFFA;
+    --nyanza: #DFFEE3;
+    --tea-green: #CCFCCB;
+    --celadon: #96E6B3;
+    --mint: #76B486;
+    --fern-green: #568259;
+    --hunter-green: #4E6850;
+    --outer-space: #273d2a;
+
+    --white: #FFFFFF;
+    --squeeze: #F3F9FA;
+    --jagged-ice: #C5E4E7;
+    --water-leaf: #9FE8DF;
+    --topaz: #26C2AE;
+    --regent-gray: #7F9D9F;
+    --greyish-turquoise: #5E7A7D;
+    --beetle-green: #547878;
+    --sherpa-blue: #00474B;
+    
+}
+
+body{
+    font-size: 1.6rem;
+    background: var(--nyanza);
+}
+
+header {
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    background-color: var(--white);
+    border-radius: 2.5rem 2.5rem 0 0;
+    padding: 3.2rem 2.4rem;
+    max-width: 92rem;
+}
+
+.info {
+    padding-inline: .8rem;
+
+
+    div{
+        margin-bottom: 3.2rem;
+
+    }
+
+    strong {
+        color: var(--fern-green);
+        display: block;
+        margin-bottom: .6rem;
+    }
+
+    .input-box{
+        background: var(--mint-cream);
+        padding: .6rem 1.8rem;
+        border-radius: .5rem;
+        display: flex;
+        align-items: center;
+
+        input{
+            background: transparent;
+            border: none;
+            text-align: right;
+            width: 100%;
+            outline: none;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--outer-space);
+        }
+
+        input::placeholder{
+            color: var(--outer-space);
+            opacity: 0.35;
+
+        }
+    }
+
+    .input-box:has(input:focus){
+        outline: 2px solid var(--celadon);
+    }
+
+    .tip > div{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.6rem;
+        margin-top: 1rem;
+
+        button{
+            border: none;
+            background: var(--outer-space);
+            color: var(--white);
+            font-size: 2.4rem;
+            border-radius: .5rem;
+            padding-block: .6rem;
+            font-weight: 700;
+        }
+
+        button:hover{
+            background: var(--tea-green);
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .button-selected {
+            background: var(--celadon);
+        }
+
+        input{
+            width: 100%;
+            background: var(--mint-cream);
+            font-size: 2.4rem;
+            text-align: center;
+            border: none;
+            border-radius: .5rem;
+            outline: none;
+            font-weight: 700;
+            color: var(--outer-space);
+
+            &::placeholder{
+                color: var(--hunter-green);
+            }
+
+            &:focus{
+                outline: 2px solid var(--celadon);
+            }
+        }
+    }
+}
+
+.results{
+    background: var(--outer-space);
+    border-radius: 1.5rem;
+    padding: 4rem 2.4rem 2.4rem;
+
+    .amount,
+    .total{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2.4rem;
+
+        p{
+            color: var(--white);
+
+            span{color: var(--mint);
+            font-size: 1.3rem;}
+        }
+
+        strong{
+            color: var(--celadon);
+            font-size: 3.2rem;
+        }
+    }
+
+    button{
+        width: 100%;
+        font-size: 2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        background: var(--celadon);
+        color: var(--outer-space);
+        border: none;
+        padding-block: .9rem;
+        border-radius: .5rem;
+    }
+
+    button:hover{
+        background: var(--tea-green);
+        cursor: pointer;
+        transition: .3s;
+    }
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button{
+    display: none;
+}
+
+@media(min-width: 920px){
+    header{
+        margin-top: 5rem;
+    }
+
+    main{
+        display: flex;
+        max-width: 92rem;
+        margin-inline: auto;
+        border-radius: 2.5rem;
+        padding: 4.8rem;
+        gap:4.8rem;
+
+        section{
+            width: 100%;
+        }
+
+        .info .tip div{
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .results{
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .amount strong,
+            .total strong{
+                font-size: 4.8rem;
+            }
+        }
+    }
+}
