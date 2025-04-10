@@ -2,7 +2,6 @@ let bill = 0
 let tipPercentage = 0 
 let numberOfPeople = 0
 let buttonSelected = null
-let reset = null
 
 function receiveBillValue(){
     bill = document.querySelector("#bill").valueAsNumber 
