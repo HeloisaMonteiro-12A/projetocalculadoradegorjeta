@@ -1,6 +1,4 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -20,17 +18,6 @@
     --fern-green: #568259;
     --hunter-green: #4E6850;
     --outer-space: #273d2a;
-
-    --white: #FFFFFF;
-    --squeeze: #F3F9FA;
-    --jagged-ice: #C5E4E7;
-    --water-leaf: #9FE8DF;
-    --topaz: #26C2AE;
-    --regent-gray: #7F9D9F;
-    --greyish-turquoise: #5E7A7D;
-    --beetle-green: #547878;
-    --sherpa-blue: #00474B;
-    
 }
 
 body{
@@ -220,6 +207,7 @@ input::-webkit-outer-spin-button{
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+
 
             .amount strong,
             .total strong{
