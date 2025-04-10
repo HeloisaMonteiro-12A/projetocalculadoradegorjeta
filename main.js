@@ -29,7 +29,9 @@ function receiveTipPercentageValue(value){
 
 function receiveCustomPercentageValue() {
     tipPercentage = document.querySelector("#custom-tip").valueAsNumber / 100;
+    
     removeClassButtonSelected();
+
     calculateResults();
 }
 
@@ -58,5 +60,5 @@ function calculateTotalPerson() {
     let tipAmountPerson = (bill * tipPercentage) / numberOfPeople;
     let totalAmountPerson = (bill / numberOfPeople) + tipAmountPerson;
     totalStrong.textContent = `$${totalAmountPerson.toFixed(2)}`;
-    
+
 }
