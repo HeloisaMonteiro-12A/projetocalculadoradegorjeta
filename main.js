@@ -5,7 +5,6 @@ let buttonSelected = null
 
 function receiveBillValue(){
     bill = document.querySelector("#bill").valueAsNumber 
-    
     calculateResults()
 }
 
@@ -59,4 +58,5 @@ function calculateTotalPerson() {
     let tipAmountPerson = (bill * tipPercentage) / numberOfPeople;
     let totalAmountPerson = (bill / numberOfPeople) + tipAmountPerson;
     totalStrong.textContent = `$${totalAmountPerson.toFixed(2)}`;
+    
 }
