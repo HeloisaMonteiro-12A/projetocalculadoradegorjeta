@@ -2,6 +2,7 @@ let bill = 0
 let tipPercentage = 0 
 let numberOfPeople = 0
 let buttonSelected = null
+let reset = null
 
 function receiveBillValue(){
     bill = document.querySelector("#bill").valueAsNumber 
@@ -20,32 +21,33 @@ function receiveTipPercentageValue(value){
 
     removeClassButtonSelected()
 
-    document.querySelector("#custom-tip"),value = ""
+    document.querySelector("#custom-tip").value = ""
 
-    buttonSelected = document.querySelector(`#button-${value}`)
+    buttonSelected = document.querySelector(`#button${value}`)
     buttonSelected.classList.add("button-selected")
 
     calculateResults()
 }
 
 function receiveCustomPercentageValue(){
-    tipPercentage.document.querySelector("#custom-tip").valueAsNumber / 100
+    tipPercentage = value / 100
+    tipPercentage = document.querySelector("#custom-tip").valueAsNumber / 100
 
     removeClassButtonSelected()
-
     calculateResults()
 }
 
 function removeClassButtonSelected(){
-    if( buttonSelected !== null){
-        buttonSelected.classList.remove("button-selected")
-    buttonSelected = null}
-}
-
+        if (buttonSelected !== null) {
+            buttonSelected.classList.remove("button-selected");
+            buttonSelected = null;
+        }
+    }
+    
 function calculateResults(){
     if (bill !== 0 && tipPercentage !== 0 && numberOfPeople !== 0) {
-        calculateTipAmountPerson()
-        calculateTotalPerson()
+        calculateTipAmountPerson();
+        calculateTotalPerson();
     }
 
 }
@@ -56,9 +58,9 @@ function calculateTipAmountPerson(){
     return
 }
 
-function calculateTotalPerson(){
-    let totalStrong = document.querySelector(".total strong")
-    let totalAmountPerson = bill / numberOfPeople + tipAmountPerson
-    totalStrong.textContent=`$${totalAmountPerson.toFixed(2)}`
-    return
+function calculateTotalPerson() {
+    let totalStrong = document.querySelector(".total strong");
+    let tipAmountPerson = (bill * tipPercentage) / numberOfPeople;
+    let totalAmountPerson = (bill / numberOfPeople) + tipAmountPerson;
+    totalStrong.textContent = `$${totalAmountPerson.toFixed(2)}`;
 }
