@@ -29,21 +29,18 @@ function receiveTipPercentageValue(value){
     calculateResults()
 }
 
-function receiveCustomPercentageValue(){
-    tipPercentage = value / 100
-    tipPercentage = document.querySelector("#custom-tip").valueAsNumber / 100
-
-    removeClassButtonSelected()
-    calculateResults()
+function receiveCustomPercentageValue() {
+    tipPercentage = document.querySelector("#custom-tip").valueAsNumber / 100;
+    removeClassButtonSelected();
+    calculateResults();
 }
 
 function removeClassButtonSelected(){
-        if (buttonSelected !== null) {
-            buttonSelected.classList.remove("button-selected");
-            buttonSelected = null;
-        }
-    }
-    
+    if( buttonSelected !== null){
+        buttonSelected.classList.remove("button-selected")
+    buttonSelected = null}
+}
+
 function calculateResults(){
     if (bill !== 0 && tipPercentage !== 0 && numberOfPeople !== 0) {
         calculateTipAmountPerson();
